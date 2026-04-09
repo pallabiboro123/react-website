@@ -86,7 +86,9 @@ function Education() {
 
 /* ---------- Skills ---------- */
 function Skills() {
-  const [users, setUsers] = useState([]);
+  {users.map(user => (
+  <p key={user.id}>{user.name}</p>
+))}
 
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/users")
