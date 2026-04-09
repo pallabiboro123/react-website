@@ -86,9 +86,7 @@ function Education() {
 
 /* ---------- Skills ---------- */
 function Skills() {
-  {users.map(user => (
-  <p key={user.id}>{user.name}</p>
-))}
+  const [users, setUsers] = useState([]);
 
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/users")
@@ -99,13 +97,12 @@ function Skills() {
   return (
     <div className="container">
       <h2>Skills</h2>
+      <p>HTML, CSS, JavaScript, React</p>
 
-      <ul>
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>JavaScript</li>
-        <li>React.js</li>
-      </ul>
+      <h3>Users from API:</h3>
+      {users.map(user => (
+        <p key={user.id}>{user.name}</p>
+      ))}
     </div>
   );
 }
