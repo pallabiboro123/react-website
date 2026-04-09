@@ -69,24 +69,26 @@ function Education() {
     <div className="container">
       <h2>Education</h2>
 
-        <li>
+        <p>
           B.Tech in Computer Science and Engineering (ASTU): Dhemaji Engineering College, 2024 – 2028
-        </li>
+        </p>
 
-        <li>
+        <p>
           Higher Secondary (AHSEC): Aryabhatta Ideal Academy, 2023
-        </li>
+        </p>
 
-        <li>
+        <p>
           High School (SEBA): Gopchachuba High School, 2021
-        </li>
+        </p>
     </div>
   );
 }
 
 /* ---------- Skills ---------- */
 function Skills() {
-  const [users, setUsers] = useState([]);
+  {users.map(user => (
+  <p key={user.id}>{user.name}</p>
+))}
 
   useEffect(() => {
     fetch("https://jsonplaceholder.typicode.com/users")
@@ -97,12 +99,11 @@ function Skills() {
   return (
     <div className="container">
       <h2>Skills</h2>
-      <p>HTML, CSS, JavaScript, React</p>
 
-      <h3>Users from API:</h3>
-      {users.map(user => (
-        <p key={user.id}>{user.name}</p>
-      ))}
+        <p>HTML</p>
+        <p>CSS</p>
+        <p>JavaScript</p>
+        <p>React.js</p>
     </div>
   );
 }
